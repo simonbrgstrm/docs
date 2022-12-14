@@ -1,10 +1,10 @@
 
 ---
-title: "docker"
-linkTitle: "docker"
+title: "docker cli"
+linkTitle: "docker cli"
 date: 2017-01-05
 description: >
-  docker commands.
+  docker cli commands.
 ---
 
 {{% pageinfo %}}
