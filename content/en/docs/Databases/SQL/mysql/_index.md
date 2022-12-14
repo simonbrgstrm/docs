@@ -83,7 +83,7 @@ mysql> DROP USER 'username'@'localhost';
 Create new table from existing table
 
 ```mysql
-mysql> create table newtable like existingtable;
+mysql> CREATE TABLE newtable LIKE existingtable;
 ```
 
 ### How To Dump Databases
