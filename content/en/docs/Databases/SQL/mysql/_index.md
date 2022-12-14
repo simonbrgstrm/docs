@@ -86,6 +86,15 @@ Create new table from existing table
 mysql> CREATE TABLE newtable LIKE existingtable;
 ```
 
+Update table column value from another table
+
+```mysql
+mysql> 
+UPDATE tableA
+INNER JOIN tableB ON (tableA.id = tableB.id)
+set tableA.column = tableB.column WHERE tableA.identifier = 'name';
+```
+
 ### How To Dump Databases
 
 If it's an entire Database
