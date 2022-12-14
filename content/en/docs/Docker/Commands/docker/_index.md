@@ -28,28 +28,28 @@ docker ps -a
 
 Start a container from an image, with a custom name
 ```shell
-docker run --name {{container_name}} {{image}}
+docker run --name <container_name> <image>
 ```
 
 Run a container in the background
 ```shell
-docker run -d {{image}}
+docker run -d <image>
 ```
 
 
 Run a container and expose port
 ```shell
-docker run -p 8080:8080 {{image}}
+docker run -p 8080:8080 <image>
 ```
 
 Run a container and remove it when stopped
 ```shell
-docker run --rm {{image}}
+docker run --rm <image>
 ```
 
 Run a container and pass in environment variables
 ```shell
-docker run --env VAR=myvar {{image}}
+docker run --env VAR=myvar <image>
 ```
 
 Mariadb example
@@ -59,12 +59,12 @@ docker run -d --rm -p 3306:3306 --name mariadb --env MYSQL_ROOT_PASSWORD=passwor
 
 Start or stop an existing container
 ```shell
-docker {{start|stop}} {{container_name}}
+docker <start|stop> <container_name>
 ```
 
 Remove a stopped container
 ```shell
-docker rm {{container_name}}
+docker rm <container_name>
 ```
 
 Remove all stopped containers
@@ -74,29 +74,29 @@ docker container prune
 
 Fetch and follow the logs of a container
 ```shell
-docker logs -f {{container_name}}
+docker logs -f <container_name>
 ```
 
 Pull an image from a docker registry
 ```shell
-docker pull {{image}}
+docker pull <image>
 ```
 
 Open a shell inside of an already running container
 ```shell
-docker exec -it {{container_name}} bash/sh
+docker exec -it <container_name> bash/sh
 ```
 
 ### Images
 
 Build an Image from a Dockerfile
 ```shell
-docker build -t {{image}} .
+docker build -t <image> .
 ```
 
 Build an Image from a Dockerfile without the cache
 ```shell
-docker build -t {{image}} . –no-cache
+docker build -t <image> . –no-cache
 ```
 
 List local images
@@ -106,7 +106,7 @@ docker image ls
 
 Delete an Image
 ```shell
-docker image rm {{image}}
+docker image rm <image>
 ```
 
 Remove all unused images
@@ -118,12 +118,12 @@ docker image prune
 
 Create volume
 ```shell
-docker volume create {{name}}
+docker volume create <name>
 ```
 
 Remove volume
 ```shell
-docker volume rm {{volume}}
+docker volume rm <volume>
 ```
 
 List volumes
@@ -133,8 +133,7 @@ docker volume ls
 
 Inspect volume
 ```shell
-docker volume inspect {{volume}}
+docker volume inspect <volume>
 ```
 
-docker volume inspect: To inspect the volumes.
 
