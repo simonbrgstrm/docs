@@ -4,15 +4,19 @@ title: "Mysql/Mariadb"
 linkTitle: "Mysql/Mariadb"
 date: 2017-01-05
 description: >
-  A short lead description about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
+  Some good to know mysql commands.
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+Official documentation.
+
+https://dev.mysql.com/doc/
+
+https://mariadb.com/kb/en/documentation/
 {{% /pageinfo %}}
 
 
-This is the section landing page.
+My Ess Que Ell.
 
 ### Create user
 
@@ -20,7 +24,7 @@ Create new localhost user.
 ```mysql
 mysql> CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 ```
-Or global user.
+Create new global user.
 ```mysql
 mysql> CREATE USER 'newuser'@'%' IDENTIFIED BY 'password';
 ```
@@ -75,4 +79,50 @@ Just as you can delete databases with DROP, you can use DROP to delete a user al
 ```mysql
 mysql> DROP USER 'username'@'localhost';
 ```
+
+Create new table from existing table
+
+```mysql
+mysql> create table newtable like existingtable;
+```
+
+### How To Dump Databases
+
+If it's an entire Database
+
+```shell
+$ mysqldump -u [user] -p [db_name] > db_backup.sql
+```
+
+If it's all Databases.
+
+```shell
+$ mysqldump -u [user] -p --all-databases > all_db_backup.sql
+```
+
+If it's specific tables within a Database.
+
+```shell
+$ mysqldump -u [user] -p [db_name] table1 table2 > table_backup.sql
+```
+
+Auto-compressing the output using gzip. 
+
+```shell
+$ mysqldump -u [user] -p [db_name] | gzip > db_backup.sql.gz
+```
+
+If you want to do this remotely and you have the access to the server in question.
+
+```shell
+$ mysqldump -P 3306 -h [ip_address] -u [user] -p [db_name] > db_backup.sql
+```
+
+If you only want the schema.
+
+```shell
+$ mysqldump -u [user] -p --no-data [db_name] > db_schema.sql
+```
+
+
 
