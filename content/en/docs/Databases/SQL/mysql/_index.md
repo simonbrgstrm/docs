@@ -80,10 +80,16 @@ Just as you can delete databases with DROP, you can use DROP to delete a user al
 mysql> DROP USER 'username'@'localhost';
 ```
 
-Create new table from existing table
+Create new table from existing table (no data)
 
 ```mysql
 mysql> CREATE TABLE newtable LIKE existingtable;
+```
+
+Create new table from existing table with data
+
+```mysql
+mysql> CREATE TABLE newtable AS SELECT * FROM existingtable;
 ```
 
 Update table column value from another table
