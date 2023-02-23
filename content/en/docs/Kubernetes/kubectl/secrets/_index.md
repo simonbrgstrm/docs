@@ -20,3 +20,33 @@ Create secret with no values
 kubectl create secret generic NAME
 ```
 
+Create file with passphrase value in it
+```console
+echo -n "super secret" > ./passphrase
+```
+
+Create the secret using the passphrase file
+```console
+kubectl create secret generic NAME --from-file=./passphrase
+```
+
+View the secret
+```console
+kubectl describe secret NAME
+```
+
+View the contents of the secret
+```console
+kubectl get secret NAME -o jsonpath='{.data}'
+```
+
+Decode the secret passphrase value
+```console
+echo 'c3VwZXIgc2VjcmV0' | base64 --decode
+```
+
+Delete secret
+```console
+kubectl delete secret NAME
+```
+
