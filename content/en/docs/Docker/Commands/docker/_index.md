@@ -17,122 +17,122 @@ https://docs.docker.com/engine/reference/commandline/cli/
 ### Defaults
 
 List running containers
-```shell
+```console
 docker ps 
 ```
 
 List all docker containers (running and stopped)
-```shell
+```console
 docker ps -a
 ```
 
 Start a container from an image, with a custom name
-```shell
+```console
 docker run --name <container_name> <image>
 ```
 
 Run a container in the background
-```shell
+```console
 docker run -d <image>
 ```
 
 
 Run a container and expose port
-```shell
+```console
 docker run -p 8080:8080 <image>
 ```
 
 Run a container and remove it when stopped
-```shell
+```console
 docker run --rm <image>
 ```
 
 Run a container and pass in environment variables
-```shell
+```console
 docker run --env VAR=myvar <image>
 ```
 
 Mariadb example
-```shell
+```console
 docker run -d --rm -p 3306:3306 --name mariadb --env MYSQL_ROOT_PASSWORD=password mariadb:latest
 ```
 
 Start or stop an existing container
-```shell
+```console
 docker <start|stop> <container_name>
 ```
 
 Remove a stopped container
-```shell
+```console
 docker rm <container_name>
 ```
 
 Remove all stopped containers
-```shell
+```console
 docker container prune
 ```
 
 Fetch and follow the logs of a container
-```shell
+```console
 docker logs -f <container_name>
 ```
 
 Pull an image from a docker registry
-```shell
+```console
 docker pull <image>
 ```
 
-Open a shell inside of an already running container
-```shell
+Open a console inside of an already running container
+```console
 docker exec -it <container_name> bash/sh
 ```
 
 ### Images
 
 Build an Image from a Dockerfile
-```shell
+```console
 docker build -t <image> .
 ```
 
 Build an Image from a Dockerfile without the cache
-```shell
+```console
 docker build -t <image> . –no-cache
 ```
 
 List local images
-```shell
+```console
 docker image ls
 ```
 
 Delete an Image
-```shell
+```console
 docker image rm <image>
 ```
 
 Remove all unused images
-```shell
+```console
 docker image prune
 ```
 
 ### Volumes
 
 Create volume
-```shell
+```console
 docker volume create <name>
 ```
 
 Remove volume
-```shell
+```console
 docker volume rm <volume>
 ```
 
 List volumes
-```shell
+```console
 docker volume ls
 ```
 
 Inspect volume
-```shell
+```console
 docker volume inspect <volume>
 ```
 
