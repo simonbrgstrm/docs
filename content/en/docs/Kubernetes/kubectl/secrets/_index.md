@@ -64,6 +64,11 @@ data:
 EOF
 ```
 
+Edit secret
+```shell
+kubectl edit secret {NAME}
+```
+
 Delete secret
 ```shell
 kubectl delete secret {NAME}
