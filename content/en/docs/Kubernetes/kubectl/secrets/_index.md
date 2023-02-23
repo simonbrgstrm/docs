@@ -16,37 +16,37 @@ https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-secr
 ### Secrets
 
 Create secret with no values
-```console
+```shell
 kubectl create secret generic NAME
 ```
 
 Create file with passphrase value in it
-```console
+```shell
 echo -n "super secret" > ./passphrase
 ```
 
 Create the secret using the passphrase file
-```console
+```shell
 kubectl create secret generic NAME --from-file=./passphrase
 ```
 
 View the secret
-```console
+```shell
 kubectl describe secret NAME
 ```
 
 View the contents of the secret
-```console
+```shell
 kubectl get secret NAME -o jsonpath='{.data}'
 ```
 
 Decode the secret passphrase value
-```console
+```shell
 echo 'c3VwZXIgc2VjcmV0' | base64 --decode
 ```
 
 Delete secret
-```console
+```shell
 kubectl delete secret NAME
 ```
 
